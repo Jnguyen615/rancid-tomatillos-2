@@ -1,9 +1,16 @@
 import './MovieCard.scss'
 
-const MovieCard = () => {
+const MovieCard = ({ title, rating, poster, id}) => {
   return (
     <div className="movie-card">
-      <p>Movie Cards!</p>
+      <h3>{title}</h3>
+      <img
+              id={id}
+              src={poster}
+              alt={title}
+              className="movie-image"
+            />
+      <p>Rating: {rating}/10</p>
     </div>
   )
 }
