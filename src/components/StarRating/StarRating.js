@@ -7,14 +7,7 @@ function StarRating({ rating }) {
       {Array.from({ length: rating }, (_, i) => (
         <Star key={i} />
       ))}
-      <p
-        style={{
-          color: 'whitesmoke',
-        }}
-      >
-        {' '}
-        {rating}/10
-      </p>
+      <p>Rating: {rating}/10</p>
     </div>
   );
 }
