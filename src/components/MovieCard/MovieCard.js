@@ -10,7 +10,6 @@ const MovieCard = ({ title, rating, poster, id}) => {
               alt={title}
               className="movie-image"
             />
-      <p>Rating: {rating}/10</p>
     </div>
   )
 }

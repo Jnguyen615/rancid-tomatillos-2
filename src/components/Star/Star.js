@@ -3,8 +3,8 @@ function Star() {
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 20 20"
-      fill="#FFFF00"
-      stroke="#FFFF00"
+      fill="#39FF14"
+      stroke="#39FF14"
       style={{
         width: '20px',
         height: '20px',
