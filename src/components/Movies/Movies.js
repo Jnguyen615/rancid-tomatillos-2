@@ -3,26 +3,24 @@ import MovieCard from "../MovieCard/MovieCard";
 import StarRating from '../StarRating/StarRating'
 
 const Movies = ({ apiMovieData }) => {
-  const movieCards = apiMovieData.map(movie => {
-    return (
-      <div>
-      <MovieCard
-        key={movie.id}
-        id={movie.id}
-        title={movie.title}
-        poster={movie.poster_path}
-        rating={movie.average_rating}
-      />
-      <StarRating rating={Math.round(movie.average_rating)} />
+  const movieCards = apiMovieData.map(movie => (
+    <div className="movie-card" key={movie.id}> 
+      <img src={movie.poster_path} alt={movie.title} className="movie-image" />
+
+      <div className="movie-info">
+        
+        <div className="movie-title">{movie.title}</div>
+        <StarRating rating={Math.round(movie.average_rating)} />
+      </div>
     </div>
-    );
-  });
+  ));
 
   return (
-    <main className="all-movies-display">
+    <main className="gallery all-movies-display"> 
       {movieCards}
     </main>
   );
 };
+
 
 export default Movies;
