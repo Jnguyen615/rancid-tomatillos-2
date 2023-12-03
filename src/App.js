@@ -5,7 +5,7 @@ import Movies from './components/Movies/Movies';
 import movieData  from './movieData';
 import { retrieveData, singleMovieId } from './Api-call';
 import Modal from "./components/Modal/Modal";
-
+import ErrorPage from './components/ErrorPage/ErrorPage'
 
 function App() {
 
@@ -41,13 +41,18 @@ function App() {
   return (
     <div className="App">
       <Header />
-      {!modalIsOpen ? (
-        <Movies handleMovieClick={handleMovieClick} movies={movies} apiMovieData={apiMovieData}/>
+      {!error ? ( 
+        !modalIsOpen ? (
+          <Movies handleMovieClick={handleMovieClick} movies={movies} apiMovieData={apiMovieData} />
+        ) : (
+          <Modal selectedMovie={selectedMovie} setModalIsOpen={setModalIsOpen} />
+        )
       ) : (
-        <Modal selectedMovie={selectedMovie} setModalIsOpen={setModalIsOpen} />
+        <ErrorPage /> 
       )}
     </div>
   );
 }
+
 
 export default App;

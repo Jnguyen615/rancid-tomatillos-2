@@ -1,6 +1,6 @@
 export const retrieveData = async () => {
   try {
-    const response = await fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
+    const response = await fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movie')
     if (!response.ok) { 
       throw new Error("Oops! Something went wrong")
     }

@@ -1,42 +1,26 @@
-@keyframes neonBlink {
-	0%,
-	100% {
-		text-shadow:
-			0 0 10px #fff,
-			0 0 20px #fff,
-			0 0 30px #39FF14,
-			0 0 40px #39FF14,
-			0 0 70px #39FF14,
-			0 0 80px #39FF14,
-			0 0 100px #39FF14,
-			0 0 150px #39FF14;
-	}
-	50% {
-		text-shadow: none;
-	}
-}
-
 .movie-header {
-	display: flex;
+  display: flex;
 	justify-content: space-between;
 	align-items: center;
 	text-align: center;
-	padding: 20px;
+	padding: 15px;
 	border-bottom: 5px solid #8F4DB2;
-
+  
 	h1 {
-		font-size: 2.5em;
+    font-size: 2.5em;
 		color: #fff;
 		text-transform: uppercase;
+    font-family: 'Permanent Marker', cursive;
 		animation: neonBlink 2.5s ease-in-out infinite;
+    margin-left: 25%
 	}
 }
 
 .header-nav {
-	display: flex;
-
+  display: flex;
+  
 	.nav-button {
-		background-color: #39FF14;
+    background-color: #39FF14;
 		border: none;
 		color: white;
 		padding: 15px 30px;
@@ -48,8 +32,26 @@
 		cursor: pointer;
 		transition: background-color 0.3s, transform 0.3s;
 		&:hover {
-			background-color: lighten(#39FF14, 10%);
+      background-color: lighten(#39FF14, 10%);
 			transform: scale(1.1);
 		}
 	}
+}
+
+@keyframes neonBlink {
+  0%,
+  100% {
+    text-shadow:
+      0 0 10px #fff,
+      0 0 20px #fff,
+      0 0 30px #39FF14,
+      0 0 40px #39FF14,
+      0 0 70px #39FF14,
+      0 0 80px #39FF14,
+      0 0 100px #39FF14,
+      0 0 150px #39FF14;
+  }
+  50% {
+    text-shadow: none;
+  }
 }
