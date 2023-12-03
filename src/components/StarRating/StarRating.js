@@ -1,5 +1,5 @@
-import Star from '../Star/Star'
-import PropTypes from 'prop-types';
+import Star from "../Star/Star";
+import PropTypes from "prop-types";
 
 function StarRating({ rating }) {
   return (
