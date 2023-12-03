@@ -1,6 +1,7 @@
 import "./Movies.scss";
 import MovieCard from "../MovieCard/MovieCard";
 import StarRating from '../StarRating/StarRating'
+import PropTypes from "prop-types";
 
 
 const Movies = ({ apiMovieData, handleMovieClick }) => {
@@ -26,5 +27,9 @@ const Movies = ({ apiMovieData, handleMovieClick }) => {
   );
 };
 
+Movies.propTypes = {
+  apiMovieData: PropTypes.arrayOf(PropTypes.object).isRequired,
+  handleMovieClick: PropTypes.func.isRequired
+};
 
 export default Movies;
