@@ -6,7 +6,6 @@ import StarRating from '../StarRating/StarRating'
 //selectedMovie propType is expecting an object with a movie property that is an object
 //setModalIsOpen propType is expecting a function that changes the state if the modal is open or not
 const Modal = ({ selectedMovie, setModalIsOpen }) => {
-  
   const handleClick = (isOpen) => {
     setModalIsOpen(isOpen);
   }

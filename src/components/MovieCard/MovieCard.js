@@ -1,7 +1,7 @@
 import "./MovieCard.scss"
 import PropTypes from "prop-types";
 
-const MovieCard = ({ title, rating, poster, id}) => {
+const MovieCard = ({ title, poster, id}) => {
   return (
     <div className="movie-card">
       <h3>{title}</h3>

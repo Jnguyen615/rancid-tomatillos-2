@@ -6,6 +6,7 @@ import movieData  from './movieData';
 import { retrieveData, singleMovieId } from './Api-call';
 import Modal from "./components/Modal/Modal";
 import ErrorPage from './components/ErrorPage/ErrorPage'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
 
@@ -39,18 +40,37 @@ function App() {
   }
   
   return (
-    <div className="App">
-      <Header />
-      {!error ? ( 
-        !modalIsOpen ? (
-          <Movies handleMovieClick={handleMovieClick} movies={movies} apiMovieData={apiMovieData} />
-        ) : (
-          <Modal selectedMovie={selectedMovie} setModalIsOpen={setModalIsOpen} />
-        )
-      ) : (
-        <ErrorPage /> 
-      )}
-    </div>
+    
+      <div className="App">
+        <Header setModalIsOpen={setModalIsOpen}/>
+        <Routes>
+          <Route
+            exact
+            path="/"
+            element={
+              !modalIsOpen ? (
+                <Movies
+                  handleMovieClick={handleMovieClick}
+                  apiMovieData={apiMovieData}
+                />
+              ) : null
+            }
+          />
+          <Route
+            path="/:movieId"
+            element={
+              selectedMovie ? (
+                <Modal
+                  selectedMovie={selectedMovie}
+                  setModalIsOpen={setModalIsOpen}
+                />
+              ) : null
+            }
+          />
+          <Route path="*" element={<ErrorPage />} />
+        </Routes>
+      </div>
+    
   );
 }
 
