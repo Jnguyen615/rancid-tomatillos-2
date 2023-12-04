@@ -12,7 +12,6 @@
 		text-transform: uppercase;
     font-family: 'Permanent Marker', cursive;
 		animation: neonBlink 2.5s ease-in-out infinite;
-    margin-left: 25%
 	}
 }
 
@@ -36,6 +35,10 @@
 			transform: scale(1.1);
 		}
 	}
+}
+
+.tomatillo-icon {
+  height: 10vh
 }
 
 @keyframes neonBlink {
