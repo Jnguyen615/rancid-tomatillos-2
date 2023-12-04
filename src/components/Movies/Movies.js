@@ -18,9 +18,9 @@ const Movies = ({ apiMovieData, handleMovieClick }) => {
   ));
 
   return (
-    <main className="gallery all-movies-display"> 
+    <div className="gallery"> 
       {movieCards}
-    </main>
+    </div>
   );
 };
 

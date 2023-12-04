@@ -1,0 +1,55 @@
+.modal {
+  background: rgb(6, 1, 1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.2s ease-in-out;
+  font-family: 'GFS Didot', serif;
+  height: 100vh
+}
+
+
+.modal-movie-image {
+  width: 20%;
+  height: auto;
+  border: .5px solid #00ff00; /* Neon green border */
+  box-shadow: 0 0 1px #00ff00, /* Neon green box shadow */
+              0 0 2px #00ff00
+}
+
+.modal-content {
+  padding: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center
+  
+}
+
+h1 {
+  font-size: 1.9rem;
+  font-weight: bold;
+  margin: 8px 0;
+  color: white;
+  text-shadow: 0 0 7px #39FF14, 0 0 10px #39FF14, 0 0 21px #39FF14;
+}
+
+.modal-rating {
+  font-size: 2rem;
+  color: #8F4DB2;
+}
+
+p {
+  color: white;
+}
+
+.close-button {
+  float: right;
+  background-color: black;
+  border: none;
+  font-size: 2em;
+}
+
+.modal-overview, .modal-release-date, .modal-genres {
+  font-size: 1.3em
+}

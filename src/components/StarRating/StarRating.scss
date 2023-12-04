@@ -1,4 +1,18 @@
 .movie-info > .Rating {
     display: flex;
     justify-content: right;
+    color: black
+}
+
+.rating {
+  color: black
+}
+
+.star-rating {
+  display: 'flex'; 
+  align-items: 'center'; 
+}
+p {
+  color: black
+
 }
