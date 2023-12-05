@@ -1,9 +1,11 @@
 import React from 'react';
 import './Header.scss';
+import Search from '../Search/Search'
+
 import tomatilloIcon from '../../greenTomato.png'
 import { useNavigate } from 'react-router-dom'
 
-const Header = ({ setModalIsOpen }) => {
+const Header = ({ setModalIsOpen, setApiMovieData, setError}) => {
   const navigate = useNavigate()
   
   function handleBackArrowClick() {
@@ -17,6 +19,7 @@ const Header = ({ setModalIsOpen }) => {
       <nav className="header-nav">
         <button onClick={handleBackArrowClick} className="nav-button">Home</button>
       </nav>
+      <Search setError={setError} setApiMovieData={setApiMovieData}/> 
     </header>
   );
 };
