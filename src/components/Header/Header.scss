@@ -1,14 +1,16 @@
+@import '../../../styles/variables.scss';
+
 .movie-header {
   display: flex;
 	justify-content: space-between;
 	align-items: center;
 	text-align: center;
 	padding: 15px;
-	border-bottom: 5px solid #8F4DB2;
+	border-bottom: 5px solid $purple;
   
 	h1 {
     font-size: 2.5em;
-		color: #fff;
+		color: $white;
 		text-transform: uppercase;
     font-family: 'Permanent Marker', cursive;
 		animation: neonBlink 2.5s ease-in-out infinite;
@@ -19,9 +21,10 @@
   display: flex;
   
 	.nav-button {
-    background-color: #39FF14;
+    font-family: $mainFont;
+    background-color: $neonGreen;
 		border: none;
-		color: white;
+		color: $white;
 		padding: 15px 30px;
 		font-size: 1.2em;
 		margin: 0 10px;
@@ -31,7 +34,7 @@
 		cursor: pointer;
 		transition: background-color 0.3s, transform 0.3s;
 		&:hover {
-      background-color: lighten(#39FF14, 10%);
+      background-color: lighten($neonGreen, 10%);
 			transform: scale(1.1);
 		}
 	}
@@ -45,14 +48,14 @@
   0%,
   100% {
     text-shadow:
-      0 0 10px #fff,
-      0 0 20px #fff,
-      0 0 30px #39FF14,
-      0 0 40px #39FF14,
-      0 0 70px #39FF14,
-      0 0 80px #39FF14,
-      0 0 100px #39FF14,
-      0 0 150px #39FF14;
+      0 0 10px $white,
+      0 0 20px $white,
+      0 0 30px $neonGreen,
+      0 0 40px $neonGreen,
+      0 0 70px $neonGreen,
+      0 0 80px $neonGreen,
+      0 0 100px $neonGreen,
+      0 0 150px $neonGreen;
   }
   50% {
     text-shadow: none;

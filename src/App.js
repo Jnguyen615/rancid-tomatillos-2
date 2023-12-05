@@ -56,6 +56,7 @@ function App() {
           }
         />
         <Route
+          exact 
           path="/:movieId"
           element={
             selectedMovie ? (
@@ -69,7 +70,7 @@ function App() {
             )
           }
         />
-        <Route path="*" element={<ErrorPage />} />
+        <Route exact path="*" element={<ErrorPage />} />
       </Routes>
     </div>
   );

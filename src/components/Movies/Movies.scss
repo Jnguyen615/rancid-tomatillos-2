@@ -1,3 +1,5 @@
+@import '../../../styles/variables.scss';
+
 .gallery {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
@@ -7,7 +9,8 @@
 
 .movie-card {
   background: black;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px rgba(57, 255, 20, 0.5);
+  border: 1px solid #8f4db2;
   border-radius: 8px;
   overflow: hidden;
   transition: transform 0.2s ease-in-out;
@@ -15,7 +18,7 @@
 
 .movie-card:hover {
   transform: scale(1.05);
-  background-color: #8f4db2;
+  background-color: purple;
 }
 
 .movie-image {
@@ -33,10 +36,10 @@
 }
 
 .movie-title {
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: bolder;
   margin: 8px 0;
   color: white;
-  text-shadow: 0 0 7px #39FF14, 0 0 10px #39FF14, 0 0 21px #39FF14;
-  font-family: 'GFS Didot', serif;
+  text-shadow: 0 0 7px $neonGreen, 0 0 1.5px $neonGreen;
+  font-family: $mainFont;
 }
