@@ -1,10 +1,13 @@
+@import '../../../styles/variables.scss';
+
+
 .modal {
   background: rgb(6, 1, 1);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
   overflow: hidden;
   transition: transform 0.2s ease-in-out;
-  font-family: 'GFS Didot', serif;
+  font-family: $mainFont;
   height: 100vh
 }
 
@@ -12,8 +15,8 @@
 .modal-movie-image {
   width: 20%;
   height: auto;
-  border: .5px solid #00ff00; /* Neon green border */
-  box-shadow: 0 0 1px #00ff00, /* Neon green box shadow */
+  border: .5px solid #00ff00; 
+  box-shadow: 0 0 1px #00ff00, 
               0 0 2px #00ff00
 }
 
@@ -31,16 +34,16 @@ h1 {
   font-weight: bold;
   margin: 8px 0;
   color: white;
-  text-shadow: 0 0 7px #39FF14, 0 0 10px #39FF14, 0 0 21px #39FF14;
+  text-shadow: 0 0 7px $neonGreen, 0 0 1.5px $neonGreen;
 }
 
 .modal-rating {
   font-size: 2rem;
-  color: #8F4DB2;
+  color: $purple;
 }
 
 p {
-  color: white;
+  color: $white;
 }
 
 .close-button {
@@ -52,4 +55,66 @@ p {
 
 .modal-overview, .modal-release-date, .modal-genres {
   font-size: 1.3em
+}
+
+ .loading-screen {
+  width: 100px;
+  height: 100px;
+  background-color:black;
+  border-radius: 100%;
+  position: absolute;
+  border: 1px solid $neonGreen;
+  animation: up 1s;
+  animation-iteration-count: infinite;
+  transition: 2s;
+  border-bottom: none;
+  border-right: none;
+  animation-timing-function: linear;
+  margin-left: -70px;
+  margin-top: -70px;
+  left: 50%;
+  top: 50%;
+  text-align: center;
+}
+
+
+#img2 {
+  width: 90px;
+  height: 90px;
+  left: 50.35%;
+  top: 50.7%;
+  animation-delay: 0.1s;
+}
+#img3 {
+  width: 80px;
+  height: 80px;
+  left: 50.7%;
+  top: 51.4%;
+  animation-delay: 0.2s;
+}
+#img4 {
+  width: 70px;
+  height: 70px;
+  left: 51.05%;
+  top: 52.1%;
+  animation-delay: 0.3s;
+}
+#img5 {
+  width: 60px;
+  height: 60px;
+  left: 51.4%;
+  top: 52.8%;
+  animation-delay: 0.4s;
+}
+
+@keyframes up {
+  from {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
