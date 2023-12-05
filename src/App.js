@@ -43,7 +43,7 @@ function App() {
 
   return (
     <div className="App">
-      <Header setModalIsOpen={setModalIsOpen} />
+      <Header setModalIsOpen={setModalIsOpen} setApiMovieData={setApiMovieData} setError={setError}/>
       <Routes>
         <Route
           exact
