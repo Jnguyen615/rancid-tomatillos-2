@@ -57,8 +57,6 @@ const Modal = ({
   );
 };
 
-//I wrote a simple test for prop types but figured to get the most out of using prop types I would write out the prop types for each component
-//Let me know if this looks right! I'm not sure if I need to write out the prop types for each property in the movie object 👇
 Modal.propTypes = {
   selectedMovie: PropTypes.shape({
     movie: PropTypes.shape({
@@ -72,12 +70,5 @@ Modal.propTypes = {
   }).isRequired,
   setModalIsOpen: PropTypes.func.isRequired,
 };
-
-//simple test for prop types 👇
-
-// Modal.propTypes = {
-//   selectedMovie: PropTypes.object.isRequired,
-//   setModalIsOpen: PropTypes.func.isRequired
-// };
 
 export default Modal;

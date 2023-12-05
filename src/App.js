@@ -6,7 +6,7 @@ import movieData from "./movieData";
 import { retrieveData, singleMovieId } from "./Api-call";
 import Modal from "./components/Modal/Modal";
 import ErrorPage from "./components/ErrorPage/ErrorPage";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, useNavigate } from "react-router-dom";
 
 function App() {
   const [movies, setMovies] = useState(movieData);
@@ -15,6 +15,7 @@ function App() {
   const [error, setError] = useState("");
   const [movieId, setMovieId] = useState("");
   const [selectedMovie, setSelectedMovie] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     retrieveData()
@@ -23,9 +24,10 @@ function App() {
       })
       .catch(error => {
         setError(error.message || "An unknown error occurred.");
+        navigate("/error");
       });
     setApiMovieData(apiMovieData);
-  }, []);
+  }, [navigate]);
 
   const handleMovieClick = async id => {
     setMovieId(id);
@@ -35,6 +37,7 @@ function App() {
       setModalIsOpen(true);
     } catch (error) {
       setError(error.message || "An unknown error occurred.");
+      navigate("/error");
     }
   };
 
@@ -61,7 +64,9 @@ function App() {
                 setModalIsOpen={setModalIsOpen}
                 setError={setError}
               />
-            ) : null
+            ) : ( 
+              <ErrorPage />
+            )
           }
         />
         <Route path="*" element={<ErrorPage />} />
