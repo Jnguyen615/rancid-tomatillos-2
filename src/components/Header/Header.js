@@ -1,7 +1,6 @@
 import React from 'react';
 import './Header.scss';
 import Search from '../Search/Search'
-
 import tomatilloIcon from '../../greenTomato.png'
 import { useNavigate } from 'react-router-dom'
 
