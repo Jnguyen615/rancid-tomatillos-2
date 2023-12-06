@@ -29,7 +29,6 @@ describe("Error Handling", () => {
         cy.visit("http://localhost:3000/movie/694919");
         cy.get(".error-message").contains(
           "Oops! Something went wrong on the server. Please try again later.");
-        } );
-
+        });
 });
 
