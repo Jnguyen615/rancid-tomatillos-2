@@ -3,11 +3,18 @@ import PropTypes from "prop-types";
 
 function StarRating({ rating }) {
   return (
-    <div className='star-rating' style={{ display: 'flex', alignItems: 'center' }}>
+    <div
+      className="star-rating"
+      style={{
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+      }}
+    >
       {Array.from({ length: rating }, (_, i) => (
         <Star key={i} />
       ))}
-      <p className='rating'>{rating}/10</p>
+      <p className="rating">{rating}/10</p>
     </div>
   );
 }

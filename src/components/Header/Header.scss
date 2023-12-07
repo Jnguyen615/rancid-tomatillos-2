@@ -1,63 +1,56 @@
-@import '../../../styles/variables.scss';
+@import "../../../styles/variables.scss";
 
 .movie-header {
   display: flex;
-	justify-content: space-between;
-	align-items: center;
-	text-align: center;
-	padding: 15px;
-	border-bottom: 5px solid $purple;
-  
-	h1 {
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  padding: 15px;
+  border-bottom: 5px solid $purple;
+
+  h1 {
+    margin: auto; // Auto margins for centering
     font-size: 2.5em;
-		color: $white;
-		text-transform: uppercase;
-    font-family: 'Permanent Marker', cursive;
-		animation: neonBlink 2.5s ease-in-out infinite;
-	}
+    color: $white;
+    text-transform: uppercase;
+    font-family: "Permanent Marker", cursive;
+    animation: neonBlink 2.5s ease-in-out infinite;
+  }
 }
 
 .header-nav {
   display: flex;
-  margin-left: 35%;
-  
-  
-	.nav-button {
+
+  .nav-button {
     font-family: $mainFont;
     background-color: $neonGreen;
-		border: none;
-		color: $white;
-		padding: 15px 30px;
-		font-size: 1.2em;
-		margin: 0 10px;
-		text-transform: uppercase;
-		font-weight: bold;
-		border-radius: 5px;
-		cursor: pointer;
-		transition: background-color 0.3s, transform 0.3s;
-		&:hover {
+    border: none;
+    color: $white;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    margin: 0 10px;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    &:hover {
       background-color: lighten($neonGreen, 10%);
-			transform: scale(1.1);
-		}
-	}
+      transform: scale(1.1);
+    }
+  }
 }
 
 .tomatillo-icon {
-  height: 10vh
+  height: 10vh;
 }
 
 @keyframes neonBlink {
   0%,
   100% {
-    text-shadow:
-      0 0 10px $white,
-      0 0 20px $white,
-      0 0 30px $neonGreen,
-      0 0 40px $neonGreen,
-      0 0 70px $neonGreen,
-      0 0 80px $neonGreen,
-      0 0 100px $neonGreen,
-      0 0 150px $neonGreen;
+    text-shadow: 0 0 10px $white, 0 0 20px $white, 0 0 30px $neonGreen,
+      0 0 40px $neonGreen, 0 0 70px $neonGreen, 0 0 80px $neonGreen,
+      0 0 100px $neonGreen, 0 0 150px $neonGreen;
   }
   50% {
     text-shadow: none;

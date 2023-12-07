@@ -1,32 +1,46 @@
 @import '../../../styles/variables.scss';
 
-
 .modal {
-  background: rgb(6, 1, 1);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  overflow: hidden;
-  transition: transform 0.2s ease-in-out;
-  font-family: $mainFont;
-  height: 100vh
+  position: fixed;
+  background: rgba(6, 1, 1, 0.85);
+  backdrop-filter: blur(5px); 
+  width: 100vw; 
+  height: 100vh;
+  display: flex;
+  z-index: 1000; 
+  box-sizing: border-box; 
+  justify-content: space-around;
+  min-height: 70vh;
 }
 
+.modal-background {
+  background-size: cover;
+  background-position: center;
+  filter: blur(8px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+}
 
 .modal-movie-image {
   width: 20%;
   height: auto;
+  border-radius: 8px;
   border: .5px solid #00ff00; 
   box-shadow: 0 0 1px #00ff00, 
-              0 0 2px #00ff00
+              0 0 2px #00ff00,
 }
 
 .modal-content {
-  padding: 16px;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  align-items: center
-  
+  text-align: center; 
+  max-width: 80%; 
+  padding: 20px; 
+  box-sizing: border-box; 
+  overflow-y: auto;  // Add a scrollbar if the content overflows
+  max-height: 90vh;
 }
 
 h1 {
@@ -38,7 +52,7 @@ h1 {
 }
 
 .modal-rating {
-  font-size: 2rem;
+  font-size: 30rem;
   color: $purple;
 }
 
@@ -46,18 +60,67 @@ p {
   color: $white;
 }
 
-.close-button {
-  float: right;
-  background-color: black;
-  border: none;
-  font-size: 2em;
+.modal-release-date, .modal-genres {
+  font-size: 1.3em;
+    color: white; 
 }
 
-.modal-overview, .modal-release-date, .modal-genres {
-  font-size: 1.3em
+.modal-overview {
+  font-size: 150%;
+  margin: 10px 0;
+  text-align: justify;
+  line-height: 1.5;
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(5px); 
+  padding: 20px; 
+  border-radius: 10px; 
 }
 
- .loading-screen {
+.modal-genres {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px; 
+  font-style: italic;
+}
+
+.genre {
+  display: inline-block;
+  margin: 0 5px;
+  padding: 5px 15px;
+  font-size: 1em;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+}
+
+.modal-release-date{
+  font-style: italic;
+  display: inline-block;
+  margin: 0 5px;
+  padding: 5px 15px;
+  font-size: 1em;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  margin-top: 11px;
+}
+
+.loading-screen {
   width: 100px;
   height: 100px;
   background-color:black;
