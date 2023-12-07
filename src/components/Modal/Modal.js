@@ -1,7 +1,7 @@
 import "./Modal.scss";
 import PropTypes from "prop-types";
 import StarRating from "../StarRating/StarRating";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { singleMovieId } from "../../Api-call";
 
@@ -11,23 +11,23 @@ const Modal = ({
   setModalIsOpen,
   setError,
 }) => {
-  const { movieId } = useParams();
+  const { movieId } = useParams(); 
   const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
 
   useEffect(() => {
-    const fetchSelectedMovie = async () => {
-      try {
-        const movieDetails = await singleMovieId(movieId);
-        setSelectedMovie(movieDetails);
-      } catch (error) {
-        setError(error.message || "An unknown error occurred.");
-      } finally {
-        setLoading(false);
-      }
-    };
-
     if (movieId) {
-      fetchSelectedMovie();
+      singleMovieId(movieId)
+        .then((data) => {
+          setSelectedMovie(data);
+        })
+        .catch((err) => {
+          setError(err.message || "An unknown error occurred.");
+          navigate("*");
+        })
+        .finally(() => {
+          setLoading(false);
+        });
     }
   }, [movieId, setSelectedMovie, setError]);
 
@@ -91,6 +91,7 @@ Modal.propTypes = {
       genres: PropTypes.arrayOf(PropTypes.string),
     }),
   }).isRequired,
+  setSelectedMovie: PropTypes.func.isRequired,
   setModalIsOpen: PropTypes.func.isRequired,
   setError: PropTypes.func.isRequired,
 };

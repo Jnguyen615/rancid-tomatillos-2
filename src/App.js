@@ -15,6 +15,7 @@ function App() {
   const [error, setError] = useState("");
   const [movieId, setMovieId] = useState("");
   const [selectedMovie, setSelectedMovie] = useState(null);
+
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -50,6 +51,7 @@ function App() {
             <Movies
               handleMovieClick={handleMovieClick}
               apiMovieData={apiMovieData}
+              setApiMovieData={setApiMovieData}
             />
           }
         />
@@ -57,15 +59,12 @@ function App() {
           exact 
           path="/:movieId"
           element={
-            selectedMovie ? (
               <Modal
                 selectedMovie={selectedMovie}
                 setModalIsOpen={setModalIsOpen}
                 setError={setError}
-              />
-            ) : ( 
-              <ErrorPage />
-            )
+                setSelectedMovie={setSelectedMovie}
+              /> 
           }
         />
         <Route exact path="*" element={<ErrorPage />} />
