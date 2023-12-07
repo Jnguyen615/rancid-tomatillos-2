@@ -25,7 +25,6 @@ function App() {
       })
       .catch(error => {
         setError(error.message || "An unknown error occurred.");
-        navigate("/error");
       });
     setApiMovieData(apiMovieData);
   }, [navigate]);
@@ -38,7 +37,6 @@ function App() {
       setModalIsOpen(true);
     } catch (error) {
       setError(error.message || "An unknown error occurred.");
-      navigate("/error");
     }
   };
 
