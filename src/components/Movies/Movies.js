@@ -3,16 +3,24 @@ import MovieCard from "../MovieCard/MovieCard";
 import StarRating from "../StarRating/StarRating";
 import PropTypes from "prop-types";
 import { useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
 
 const Movies = ({ apiMovieData, handleMovieClick }) => {
+  const [noMoviesFound, setNoMoviesFound] = useState(false);
+  const [movies, setMovies] = useState([]);
   const navigate = useNavigate();
 
-  const handleMovieCardClick = (id) => {
+  useEffect(() => {
+    setMovies(apiMovieData);
+    setNoMoviesFound(apiMovieData.length === 0);
+  }, [apiMovieData]);
+
+  const handleMovieCardClick = id => {
     handleMovieClick(id);
     navigate(`/${id}`);
   };
 
-  const movieCards = apiMovieData.map((movie) => (
+  const movieCards = movies.map(movie => (
     <div
       key={movie.id}
       onClick={() => handleMovieCardClick(movie.id)}
@@ -27,7 +35,11 @@ const Movies = ({ apiMovieData, handleMovieClick }) => {
     </div>
   ));
 
-  return <div className="gallery">{movieCards}</div>;
+  return (
+    <div className="gallery">
+      {noMoviesFound ? <h1 className="no-movies">No movies found!</h1> : <>{movieCards}</>}
+    </div>
+  );
 };
 
 Movies.propTypes = {

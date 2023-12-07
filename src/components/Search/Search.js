@@ -11,6 +11,13 @@ function SearchBar({ setApiMovieData, setError }) {
     getMoviesFromApi(e.target.value);
   };
 
+  const handleKeyPress = (e) => {
+    if (e.key === 'Enter') {
+      setSearchInput("");
+      getMoviesFromApi("");
+    }
+  };
+
   const getMoviesFromApi = async (input) => {
     try {
       let filteredMovies = [];
@@ -45,6 +52,7 @@ function SearchBar({ setApiMovieData, setError }) {
         placeholder="Search for a movie"
         value={searchInput}
         onChange={handleInputChange}
+        onKeyPress={handleKeyPress}
       />
     </div>
   );
