@@ -61,15 +61,12 @@ function App() {
           exact 
           path="/:movieId"
           element={
-            selectedMovie ? (
               <Modal
                 selectedMovie={selectedMovie}
                 setModalIsOpen={setModalIsOpen}
                 setError={setError}
-              />
-            ) : ( 
-              <ErrorPage />
-            )
+                setSelectedMovie={setSelectedMovie}
+              /> 
           }
         />
         <Route exact path="*" element={<ErrorPage />} />

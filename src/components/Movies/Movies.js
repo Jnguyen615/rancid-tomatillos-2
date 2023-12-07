@@ -36,8 +36,13 @@ const Movies = ({ apiMovieData, handleMovieClick }) => {
   ));
 
   return (
-    <div className="gallery">
-      {noMoviesFound ? <h1 className="no-movies">No movies found!</h1> : <>{movieCards}</>}
+    <div>
+      {noMoviesFound && (
+        <h1 className="no-movies">No movies found!</h1>
+      )}
+      <div className="gallery">
+        {movieCards}
+      </div>
     </div>
   );
 };

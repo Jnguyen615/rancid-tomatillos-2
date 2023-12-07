@@ -1,38 +1,35 @@
 import "./Modal.scss";
-import styles from "./Modal.scss";
 import PropTypes from "prop-types";
 import StarRating from "../StarRating/StarRating";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { singleMovieId } from "../../Api-call";
 
-//selectedMovie propType is expecting an object with a movie property that is an object
-//setModalIsOpen propType is expecting a function that changes the state if the modal is open or not
 const Modal = ({
   selectedMovie,
   setSelectedMovie,
   setModalIsOpen,
   setError,
 }) => {
-  const { movieId } = useParams(); // Extracting the movieId from URL parameters
+  const { movieId } = useParams(); 
   const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
 
   useEffect(() => {
-    const fetchSelectedMovie = async () => {
-      try {
-        const movieDetails = await singleMovieId(movieId);
-        setSelectedMovie(movieDetails);
-      } catch (error) {
-        setError(error.message || "An unknown error occurred.");
-      } finally {
-        setLoading(false);
-      }
-    };
-
     if (movieId) {
-      fetchSelectedMovie();
+      singleMovieId(movieId)
+        .then((data) => {
+          setSelectedMovie(data);
+        })
+        .catch((err) => {
+          setError(err.message || "An unknown error occurred.");
+          navigate("*");
+        })
+        .finally(() => {
+          setLoading(false);
+        });
     }
-  }, [movieId]);
+  }, [movieId, setSelectedMovie, setError]);
 
   if (loading) {
     return (
@@ -87,7 +84,9 @@ Modal.propTypes = {
       genres: PropTypes.arrayOf(PropTypes.string),
     }),
   }).isRequired,
+  setSelectedMovie: PropTypes.func.isRequired,
   setModalIsOpen: PropTypes.func.isRequired,
+  setError: PropTypes.func.isRequired,
 };
 
 export default Modal;
