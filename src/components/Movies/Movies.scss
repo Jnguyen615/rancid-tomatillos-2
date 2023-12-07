@@ -3,8 +3,6 @@
 .gallery {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  // gap: 16px;
-  // padding: 16px;
   gap: 80px;
   padding: 114px;
 }
@@ -53,5 +51,4 @@
   font-size: 2em;
 }
 
-}
 
