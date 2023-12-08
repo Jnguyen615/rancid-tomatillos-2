@@ -15,12 +15,12 @@ const Movies = ({ apiMovieData, handleMovieClick }) => {
     setNoMoviesFound(apiMovieData.length === 0);
   }, [apiMovieData]);
 
-  const handleMovieCardClick = id => {
+  const handleMovieCardClick = (id) => {
     handleMovieClick(id);
     navigate(`/${id}`);
   };
 
-  const movieCards = movies.map(movie => (
+  const movieCards = movies.map((movie) => (
     <div
       key={movie.id}
       onClick={() => handleMovieCardClick(movie.id)}
@@ -36,20 +36,22 @@ const Movies = ({ apiMovieData, handleMovieClick }) => {
   ));
 
   return (
-    
     <div>
-      {noMoviesFound && (
-        <h1 className="no-movies">No movies found!</h1>
-      )}
-      <div className="gallery">
-        {movieCards}
-      </div>
+      {noMoviesFound && <h1 className="no-movies">No movies found!</h1>}
+      <div className="gallery">{movieCards}</div>
     </div>
   );
 };
 
 Movies.propTypes = {
-  apiMovieData: PropTypes.arrayOf(PropTypes.object).isRequired,
+  apiMovieData: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      poster_path: PropTypes.string.isRequired,
+      title: PropTypes.string.isRequired,
+      average_rating: PropTypes.number.isRequired,
+    })
+  ).isRequired,
   handleMovieClick: PropTypes.func.isRequired,
 };
 
