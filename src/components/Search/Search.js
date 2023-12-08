@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
-import { retrieveData } from '../../Api-call'
-import "./Search.scss" 
+import { retrieveData } from "../../Api-call";
+import "./Search.scss";
 
 function SearchBar({ setApiMovieData, setError }) {
   const [searchInput, setSearchInput] = useState("");
@@ -12,7 +12,7 @@ function SearchBar({ setApiMovieData, setError }) {
   };
 
   const handleKeyPress = (e) => {
-    if (e.key === 'Enter') {
+    if (e.key === "Enter") {
       setSearchInput("");
       getMoviesFromApi("");
     }
@@ -58,9 +58,9 @@ function SearchBar({ setApiMovieData, setError }) {
   );
 }
 
-export default SearchBar;
-
 SearchBar.propTypes = {
   setApiMovieData: PropTypes.func.isRequired,
   setError: PropTypes.func.isRequired,
 };
+
+export default SearchBar;
