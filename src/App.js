@@ -2,19 +2,18 @@ import "./App.scss";
 import { useState, useEffect } from "react";
 import Header from "./components/Header/Header";
 import Movies from "./components/Movies/Movies";
-import movieData from "./movieData";
 import { retrieveData, singleMovieId } from "./Api-call";
 import Modal from "./components/Modal/Modal";
 import ErrorPage from "./components/ErrorPage/ErrorPage";
 import { BrowserRouter as Router, Routes, Route, useNavigate } from "react-router-dom";
 
 function App() {
-  const [movies, setMovies] = useState(movieData);
+  const [movies, setMovies] = useState([]);
   const [apiMovieData, setApiMovieData] = useState([]);
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [error, setError] = useState("");
   const [movieId, setMovieId] = useState("");
-  const [selectedMovie, setSelectedMovie] = useState(null);
+  const [selectedMovie, setSelectedMovie] = useState({});
 
   const navigate = useNavigate();
 
@@ -26,8 +25,15 @@ function App() {
       .catch(error => {
         setError(error.message || "An unknown error occurred.");
       });
-    setApiMovieData(apiMovieData);
   }, [navigate]);
+
+  useEffect(() => {
+    if (modalIsOpen) {
+      document.body.classList.add('modal-open');
+    } else {
+      document.body.classList.remove('modal-open');
+    }
+  }, [modalIsOpen]);
 
   const handleMovieClick = async id => {
     setMovieId(id);
