@@ -36,6 +36,7 @@ const Movies = ({ apiMovieData, handleMovieClick }) => {
   ));
 
   return (
+    
     <div>
       {noMoviesFound && (
         <h1 className="no-movies">No movies found!</h1>
