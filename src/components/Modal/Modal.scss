@@ -1,7 +1,6 @@
 @import '../../../styles/variables.scss';
 
 .modal {
-  position: fixed;
   background: rgba(6, 1, 1, 0.85);
   backdrop-filter: blur(5px); 
   width: 100vw; 
@@ -38,7 +37,6 @@
   text-align: center; 
   max-width: 80%; 
   padding: 20px; 
-  box-sizing: border-box; 
   overflow-y: auto;
   max-height: 90vh;
 }
@@ -51,18 +49,8 @@ h1 {
   text-shadow: 0 0 7px $neonGreen, 0 0 1.5px $neonGreen;
 }
 
-.modal-rating {
-  font-size: 30rem;
-  color: $purple;
-}
-
 p {
   color: $white;
-}
-
-.modal-release-date, .modal-genres {
-  font-size: 1.3em;
-    color: white; 
 }
 
 .modal-overview {
@@ -120,7 +108,7 @@ p {
   margin-top: 11px;
 }
 
-.loading-screen {
+.loading-page {
   width: 100px;
   height: 100px;
   background-color:black;
@@ -138,35 +126,6 @@ p {
   left: 50%;
   top: 50%;
   text-align: center;
-}
-
-#img2 {
-  width: 90px;
-  height: 90px;
-  left: 50.35%;
-  top: 50.7%;
-  animation-delay: 0.1s;
-}
-#img3 {
-  width: 80px;
-  height: 80px;
-  left: 50.7%;
-  top: 51.4%;
-  animation-delay: 0.2s;
-}
-#img4 {
-  width: 70px;
-  height: 70px;
-  left: 51.05%;
-  top: 52.1%;
-  animation-delay: 0.3s;
-}
-#img5 {
-  width: 60px;
-  height: 60px;
-  left: 51.4%;
-  top: 52.8%;
-  animation-delay: 0.4s;
 }
 
 @keyframes up {
