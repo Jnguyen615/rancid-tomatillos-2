@@ -28,6 +28,8 @@ const Modal = ({
         .finally(() => {
           setLoading(false);
         });
+        document.body.style.overflow='hidden'
+        document.doctype.scrollTop= 0 
     }
   }, [movieId, setSelectedMovie, setError]);
 
