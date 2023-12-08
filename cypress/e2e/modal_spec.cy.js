@@ -4,7 +4,7 @@ describe("Modal Display Tests", () => {
     cy.intercept(
       "GET",
       "https://rancid-tomatillos.herokuapp.com/api/v2/movies/",
-      { fixture: "allMoviesData.json" },
+      { fixture: "allMoviesData.json" }
     ).as("getAllMovies");
   });
 
@@ -29,13 +29,17 @@ describe("Modal Display Tests", () => {
     cy.intercept(
       "GET",
       "https://rancid-tomatillos.herokuapp.com/api/v2/movies/*",
-      { fixture: "blackAdamData.json" },
+      { fixture: "blackAdamData.json" }
     ).as("getSingleMovie");
     cy.get(".movie-card").first().click();
-    cy.wait("@getSingleMovie").then(interception => {
+    cy.wait("@getSingleMovie").then((interception) => {
       expect(interception.response.statusCode).to.equal(200);
+      const backdropPath = interception.response.body.movie.backdrop_path;
 
       cy.get(".modal").should("be.visible");
+      cy.get(".modal-background")
+        .should("have.attr", "style")
+        .and("include", backdropPath);
       cy.get(".modal-content > h1")
         .should("contain", "Black Adam")
         .get(".star-rating")
@@ -44,7 +48,7 @@ describe("Modal Display Tests", () => {
         .get(".modal-overview")
         .should(
           "contain",
-          "Nearly 5,000 years after he was bestowed with the almighty powers of the Egyptian gods—and imprisoned just as quickly—Black Adam is freed from his earthly tomb, ready to unleash his unique form of justice on the modern world.",
+          "Nearly 5,000 years after he was bestowed with the almighty powers of the Egyptian gods—and imprisoned just as quickly—Black Adam is freed from his earthly tomb, ready to unleash his unique form of justice on the modern world."
         )
         .get(".modal-release-date")
         .should("contain", "Release Date: 10/19/2022")
@@ -63,11 +67,11 @@ describe("Modal Display Tests", () => {
       "https://rancid-tomatillos.herokuapp.com/api/v2/movies/694919",
       {
         statusCode: 500,
-      },
+      }
     );
     cy.visit("http://localhost:3000/movie/694919");
     cy.get(".error-message").contains(
-      "Oops! Something went wrong on the server. Please try again later.",
+      "Oops! Something went wrong on the server. Please try again later."
     );
   });
 });
