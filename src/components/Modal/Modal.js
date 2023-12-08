@@ -11,7 +11,7 @@ const Modal = ({
   setModalIsOpen,
   setError,
 }) => {
-  const { movieId } = useParams(); 
+  const { movieId } = useParams();
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
 
@@ -31,14 +31,14 @@ const Modal = ({
     }
   }, [movieId, setSelectedMovie, setError]);
 
-  if (loading) {
+  if (!selectedMovie || loading) {
     return (
       <main className="loading-page">
         <div className="loading-screen"></div>
       </main>
     );
   }
-  
+
   return (
     <div className="modal" style={{ position: "relative" }}>
       {selectedMovie?.movie?.backdrop_path && (
@@ -70,8 +70,7 @@ const Modal = ({
             <p className="modal-overview">{selectedMovie.movie.overview}</p>
             <p className="modal-release-date">
               Release Date:{" "}
-              {selectedMovie.movie.release_date.replace(
-                /^(\d{4})-(\d{2})-(\d{2})$/,"$2/$3/$1")}
+              {selectedMovie.movie.release_date.replace(/^(\d{4})-(\d{2})-(\d{2})$/,"$2/$3/$1")}
             </p>
           </>
         )}
