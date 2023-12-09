@@ -76,3 +76,6 @@
 🔮 Search by genre or star rating 
 
 🔮 Comments section 
+
+
+
