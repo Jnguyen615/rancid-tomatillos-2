@@ -44,3 +44,17 @@
 8. To test, run the command `npm run cypress`.
 
 
+## 🎥 Preview
+![Rancid-Green](https://github.com/Jnguyen615/rancid-tomatillos-2/assets/119434450/124c1bd7-7a44-4d90-accc-a628fb76cc3a)
+
+## 💪🏻 Wins 
+- Making a multi page application using React and Router
+- Implemenitng search functionality 
+- Proper interceptions and stubbing using Cypress
+- Understanding and utilizing multiple components to create the arcitecture
+- Fun with a loading spinner 
+
+## 💡 Future Ideas 
+- Favoriting feature and page 
+- Search by genre or star rating 
+- Comments section 
