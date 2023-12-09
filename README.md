@@ -29,11 +29,15 @@
 - [Getting Started](#getting-started)
 - [Preview](#preview)
 - [Wins](#wins)
+- [Future Ideas](#future-ideas)
 
-## Overview 
+<h2  id="overview">🌐 Overview </h2>
+
+*Rancid Tomatillos is a user-friendly movie app that enables users to search and explore a wide variety of films, offering detailed insights on each selection to aid in making an informed choice for their next movie watch*
 
 ----
-## Getting Started
+<h2  id="getting-started">🗂️ Getting Started </h2>
+
 1. Fork or clone down this respository. 
 2. In the terminal, open this app by running the command `cd <project folder name>`
 3. Run the command  `npm install` to install dependencies.
@@ -44,3 +48,31 @@
 8. To test, run the command `npm run cypress`.
 
 
+<h2  id="preview"> 🎥 Preview </h2>
+<details>
+    
+![Rancid-Green](https://github.com/Jnguyen615/rancid-tomatillos-2/assets/119434450/124c1bd7-7a44-4d90-accc-a628fb76cc3a)
+
+  <summary>
+    Preview of App
+</summary>
+  </details>
+
+
+
+<h2  id="wins">💪🏻 Wins </h2>
+
+- Making a multi page application using React and Router
+- Implemenitng search functionality 
+- Proper interceptions and stubbing using Cypress
+- Understanding and utilizing multiple components to create the arcitecture
+- Fun with a loading spinner 
+
+
+<h2  id="future-ideas">💡 Future Ideas </h2>
+ 
+🔮 Favoriting feature and page 
+
+🔮 Search by genre or star rating 
+
+🔮 Comments section 
