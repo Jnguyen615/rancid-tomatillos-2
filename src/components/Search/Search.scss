@@ -14,3 +14,10 @@
   font-family: $mainFont
 }
 
+@media screen and (max-width: 375px) {
+  .search-input {
+    padding: 5px;
+    font-size: 12px;
+  }
+}
+
