@@ -77,7 +77,5 @@
 
 🔮 Comments section 
 
-## 🎥 Preview
-![Rancid-Green](https://github.com/Jnguyen615/rancid-tomatillos-2/assets/119434450/124c1bd7-7a44-4d90-accc-a628fb76cc3a)
 
 
