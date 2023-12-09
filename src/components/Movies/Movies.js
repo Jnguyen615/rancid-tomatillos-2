@@ -13,7 +13,6 @@ const Movies = ({ apiMovieData, handleMovieClick }) => {
   useEffect(() => {
     setMovies(apiMovieData);
     setNoMoviesFound(apiMovieData.length === 0);
-    document.body.style.overflow = 'visible'
   }, [apiMovieData]);
 
   const handleMovieCardClick = (id) => {
