@@ -1,6 +1,9 @@
 <h1 align=center> 🍿 Rancid Tomatillos 🍅 </h1>
 
 <div align="center">
+    
+<a href="https://rancid-tomatillos-beryl.vercel.app/" style="font-size: 30px;">Deployed Link</a>
+
 
 ![Tests](https://badgen.net/badge/tests/passing/green?icon=github)
 ![Commits](https://badgen.net/github/last-commit/Jnguyen615/rancid-tomatillos-2)
