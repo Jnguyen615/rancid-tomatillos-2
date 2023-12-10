@@ -48,10 +48,22 @@
 8. To test, run the command `npm run cypress`.
 
 
-<h2  id="preview"> 🎥 Preview </h2>
+<h2  id="preview"> 🎥 Preview 📱 </h2>
 <details>
     
 ![Rancid-Green](https://github.com/Jnguyen615/rancid-tomatillos-2/assets/119434450/124c1bd7-7a44-4d90-accc-a628fb76cc3a)
+
+📱 Mobile and Tablet Views 
+
+<img width="377" alt="Screenshot 2023-12-09 at 4 03 53 PM" src="https://github.com/Jnguyen615/rancid-tomatillos-2/assets/119434450/bf47e261-ad29-437f-a865-c6cb0023daaa">
+
+<img width="378" alt="Screenshot 2023-12-09 at 4 03 40 PM" src="https://github.com/Jnguyen615/rancid-tomatillos-2/assets/119434450/a07e7c34-5a49-4dbd-8c4f-63dc12e92ad8">
+
+<img width="534" alt="Screenshot 2023-12-09 at 4 45 09 PM" src="https://github.com/Jnguyen615/rancid-tomatillos-2/assets/119434450/6f007b4c-7e8c-4a9f-8e4c-614e84067f88">
+
+<img width="533" alt="Screenshot 2023-12-09 at 4 45 26 PM" src="https://github.com/Jnguyen615/rancid-tomatillos-2/assets/119434450/869cbdfd-b765-48e1-a844-7f48cf4e2db1">
+
+
 
   <summary>
     Preview of App
@@ -67,6 +79,7 @@
 - Proper interceptions and stubbing using Cypress
 - Understanding and utilizing multiple components to create the arcitecture
 - Fun with a loading spinner 
+- Practice with responsiveness
 
 
 <h2  id="future-ideas">💡 Future Ideas </h2>

@@ -5,6 +5,7 @@
   justify-content: space-between;
   align-items: center;
   text-align: center;
+  flex-wrap: wrap;
   padding: 15px;
   border-bottom: 5px solid $purple;
 
@@ -54,5 +55,51 @@
   }
   50% {
     text-shadow: none;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .movie-header {
+    padding: 0px;
+    border-bottom: 3px solid $purple;
+
+    h1 {
+      font-size: 1.5em;
+    }
+  }
+
+  .header-nav {
+    .nav-button {
+      padding: 2px;
+      font-size: 15px;
+      margin: 6px;
+    }
+  }
+
+  .tomatillo-icon {
+    height: 6vh;
+    margin-left: 42%
+  }
+
+  @keyframes neonBlink {
+    0%,
+    100% {
+      text-shadow: 0 0 5px $white, 0 0 10px $white, 0 0 15px $neonGreen,
+        0 0 20px $neonGreen, 0 0 35px $neonGreen, 0 0 40px $neonGreen,
+        0 0 50px $neonGreen, 0 0 75px $neonGreen;
+    }
+    50% {
+      text-shadow: none;
+    }
+  }
+}
+
+@media screen and (min-width: 750px) {
+  h1 {
+    font-size: 1em
+  }
+
+  .tomatillo-icon {
+    height: 7vh
   }
 }

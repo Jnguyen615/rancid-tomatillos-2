@@ -1,3 +1,4 @@
+import './StarRating.scss'
 import Star from "../Star/Star";
 import PropTypes from "prop-types";
 
