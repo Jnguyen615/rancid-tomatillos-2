@@ -1,11 +1,12 @@
 describe("Movies Homepage", () => {
   beforeEach(() => {
-    cy.visit("http://localhost:3000");
     cy.intercept(
       "GET",
       "https://rancid-tomatillos.herokuapp.com/api/v2/movies/",
       { fixture: "allMoviesData.json" }
-    ).as("getAllMovies");
+      ).as("getAllMovies");
+      cy.visit("http://localhost:3000");
+      cy.wait("@getAllMovies")
   });
 
   it("Should display a header", () => {
