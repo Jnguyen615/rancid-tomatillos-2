@@ -90,7 +90,7 @@ Modal.propTypes = {
       average_rating: PropTypes.number,
       genres: PropTypes.arrayOf(PropTypes.string),
     }),
-  }).isRequired,
+  }),
   setSelectedMovie: PropTypes.func.isRequired,
   setModalIsOpen: PropTypes.func.isRequired,
   setError: PropTypes.func.isRequired,

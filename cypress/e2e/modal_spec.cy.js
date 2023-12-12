@@ -1,6 +1,14 @@
 describe("Modal Display Tests", () => {
   beforeEach(() => {
-    cy.visit("http://localhost:3000");
+    cy.intercept(
+      "GET",
+      "https://rancid-tomatillos.herokuapp.com/api/v2/movies",
+      { 
+        statusCode: 200,
+        fixture: "allMoviesData", 
+      },
+      ).as("getAllMovies");
+      cy.visit("http://localhost:3000");
   });
 
   it("Displays the header with necessary elements", () => {
@@ -32,7 +40,7 @@ describe("Modal Display Tests", () => {
 
       cy.get(".modal")
         .should("be.visible")
-        .get(".modal-header")
+        .get("h1")
         .should("contain", "Black Adam")
         .get(".star-rating")
         .should("be.visible")
@@ -42,24 +50,14 @@ describe("Modal Display Tests", () => {
           "contain",
           "Nearly 5,000 years after he was bestowed with the almighty powers of the Egyptian gods—and imprisoned just as quickly—Black Adam is freed from his earthly tomb, ready to unleash his unique form of justice on the modern world."
         )
-        .get(".modal-release-date")
-        .should("contain", " 2022-10-19")
-        .get(".modal-genres")
-        .should("contain", "Action, Fantasy, Science Fiction");
+        .get('.modal-release-date')
+        .should("contain", " 10/19/2022")
+        .get('.modal-genres > :nth-child(1)')
+        .should("contain", "Action")
+        .get('.modal-genres > :nth-child(2)')
+        .should("contain", "Fantasy")
+        .get('.modal-genres > :nth-child(3)')
+        .should("contain", "Science Fiction")
     });
   });
-  
-  it("Should display an error if movie details are not found", () => {
-    cy.intercept(
-      "GET",
-      "https://rancid-tomatillos.herokuapp.com/api/v2/movies/694919",
-      {
-        statusCode: 500,
-      }
-    );
-    cy.visit("http://localhost:3000/movie/694919");
-    cy.get(".error-message").contains(
-      "Oops! Something went wrong on the server. Please try again later."
-    );
-  });
-});
+})

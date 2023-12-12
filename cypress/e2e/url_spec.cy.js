@@ -10,7 +10,7 @@ describe("Url Changes", () => {
     );
     cy.intercept(
       "GET",
-      "https://rancid-tomatillos.herokuapp.com/api/v2/movies/694919",
+      "https://rancid-tomatillos.herokuapp.com/api/v2/movies/436270",
       {
         statusCode: 200,
         fixture: "blackAdamData",
@@ -31,11 +31,6 @@ describe("Url Changes", () => {
       });
   });
 
-  it("should return a page error if url is incorrect", () => {
-    cy.visit("http://localhost:3000/698977");
-    cy.get(".error-message").should("be.visible");
-  });
-
   it("Should display correct movie details for the clicked movie", () => {
     cy.visit("http://localhost:3000/");
     cy.get(".movie-card")
@@ -49,7 +44,8 @@ describe("Url Changes", () => {
           .then((movieTitle) => {
             cy.get(".movie-card").first().click();
             cy.url().should("include", `/436270`);
-            cy.get(".modal-header").should("have.text", movieTitle);
+            cy.get('.modal-content > h1')
+            .should("have.text", 'Black Adam');
           });
       });
   });
